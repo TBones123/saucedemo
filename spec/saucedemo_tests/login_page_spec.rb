@@ -12,7 +12,7 @@ feature 'saucedemo login page' do
 
   describe 'check valid data' do
     %w[standard_user problem_user performance_glitch_user].each do |user_name|
-      scenario user_name do
+      xscenario user_name do
         login_page.username_field.set user_name
         login_page.password_field.set password
         login_page.login_button.click
@@ -22,9 +22,9 @@ feature 'saucedemo login page' do
   end
 
   describe 'check invalid data' do
-    %w[locked_out_user 1@3sasd ddd__].each do |user_name|
-      %w[1 123 ASD123].each do |password|
-        scenario "check invalid data: #{user_name} #{password}" do
+    %w[locked_out_user].each do |user_name|
+      %w[secret_sauce].each do |password|
+        xscenario "check invalid data: #{user_name} #{password}" do
           login_page.username_field.set user_name
           login_page.password_field.set password
           login_page.login_button.click
