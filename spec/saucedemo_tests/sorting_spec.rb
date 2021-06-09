@@ -24,25 +24,25 @@ feature 'saucedemo inventory page' do
 
 
   describe 'Inventory section' do
-    scenario 'check sort by name A to Z' do
+    xscenario 'check sort by name A to Z' do
       inventory_page.sort_section.name_A_to_Z.click
       expect(sort_selector.value).to eq 'az'
       expect(name_items).to eq base_name_items
     end
 
-    scenario 'check sort by name Z to A' do
+    xscenario 'check sort by name Z to A' do
       inventory_page.sort_section.name_Z_to_A.click
       expect(sort_selector.value).to eq 'za'
       expect(name_items).to eq base_name_items.reverse
     end
 
-    scenario 'check sort by low price' do
+    xscenario 'check sort by low price' do
       inventory_page.sort_section.price_Low_to_Hight.click
       expect(sort_selector.value).to eq 'lohi'
       expect(price_items).to eq base_price_items
     end
 
-    scenario 'check sort by hight price' do
+    xscenario 'check sort by hight price' do
       inventory_page.sort_section.price_Hight_to_Low.click
       expect(sort_selector.value).to eq 'hilo'
       expect(price_items).to eq base_price_items.reverse
