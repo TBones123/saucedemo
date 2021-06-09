@@ -13,6 +13,7 @@ feature 'saucedemo inventory page' do
     scenario "Visit the shopping cart" do
       inventory_page.primary_header.shoping_cart.click
       expect(cart_page).to have_selector('#cart_contents_container')
+
     end
     scenario "Assert that the items that you added are in the cart" do
       inventory_page.add_button_backpack.click
